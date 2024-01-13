@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block metaTitle %}Default Title{% endblock %}</title>
+    <link rel="stylesheet" href="../assets/styles/app.css" type="text/css">
+</head>
+<body>
+    <div id="menu">
+        <a href="index.php">Home</a>
+        <a href="movie.php?m=bunny">Big Bunny</a>
+        <a href="movie.php?m=toystory">Toy Story</a>
+
+    </div>
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{% extends 'base.twig' %}
+
+{% block metaTitle %}Homepage - Big Bunny{% endblock %}
+
+{% block content %}
+    <h1>Welcome to the Home Page</h1>
+    <p>Welcome on the website</p>
+    <h2>Latest News</h2>
+    <ul id="news-list">
+        {% for news in newsArray %}
+        <li>{% include 'partials/news_item.twig' with {'news': news} %}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

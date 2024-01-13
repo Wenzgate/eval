@@ -1,0 +1,20 @@
+{% extends 'base.twig' %}
+
+{% block metaTitle %}The Movie - Big Bunny{% endblock %}
+
+{% block content %}
+    <h1>Movie</h1>
+    <div id="movie-list">
+        {% for item in movieData %}
+            {% if item.type == 'image' %}
+                {% include 'partials/bunny-item-image.twig' with {'item': item} %}
+            {% elseif item.type == 'video' %}
+                {% include 'partials/bunny-item-video.twig' with {'item': item} %}
+            {% elseif item.type == 'text' %}
+                {% include 'partials/bunny-item-text.twig' with {'item': item} %}
+            {% else %}
+                {# Handle other types or provide a default action if needed #}
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}
